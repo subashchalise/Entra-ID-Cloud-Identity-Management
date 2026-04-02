@@ -1,55 +1,42 @@
-# Cloud Identity & Access Management (IAM) with Microsoft Entra ID
+# Entra ID Tier 1 Help Desk Administration
 
-## 🏢 Project Overview
-**Objective:** To design, configure, and administer a cloud-first Identity and Access Management (IAM) environment for a simulated manufacturing organization using Microsoft Entra ID. 
-
-This project demonstrates practical enterprise IT support skills, including user lifecycle management, departmental group architecture, and the implementation of security best practices like the Principle of Least Privilege (PoLP).
-
-**Environment & Technologies:** * Microsoft Entra ID (formerly Azure AD)
-* Microsoft 365 Business Basic
-* Role-Based Access Control (RBAC)
+## Project Overview
+This project simulates a real-world enterprise cloud IT environment, focusing on Identity and Access Management (IAM) within Microsoft Entra ID and the Microsoft 365 Admin Center. Building upon foundational Active Directory lifecycle concepts, this project demonstrates practical cloud administration and aligns with the core identity objectives of the MS-900 (Microsoft 365 Fundamentals) certification.
 
 ---
 
-## 🛠️ Phase 1: User Provisioning & License Management
-**Scenario:** The organization required cloud identities for employees distributed across Production, Packaging, Inventory, Human Resources, and IT departments. 
+## Phase 1: Identity Lifecycle & User Onboarding
 
-* **Action:** Provisioned structured, cloud-native user identities with standardized naming conventions.
-* **Action:** Mapped organizational hierarchy by assigning exact job titles and department attributes to each identity.
-* **Action:** Successfully deployed Microsoft 365 Business Basic licenses to active staff to enable cloud application access.
+**Objective:** To provision cloud-only identities, configure organizational metadata, apply appropriate licenses, and securely delegate administrative roles.
 
-> **Visual Proof: Active Users & Licensing**
-> *[Insert Image 1 (All Users pane) here]*
+### 1. User Provisioning & Metadata Management
+To establish the organization's foundation, I created multiple cloud-only users divided into distinct departments (IT, HR, Production, Packaging, and Inventory). 
 
----
+Beyond simply creating the accounts, I ensured each user profile was fully populated with realistic enterprise metadata. This included assigning Employee IDs, physical office locations, job titles, and establishing reporting structures (assigning Managers). Clean data management at this stage is critical for future automation, such as dynamic group memberships.
 
-## 🗂️ Phase 2: Security Group Architecture
-**Scenario:** To manage access, applications, and security policies efficiently at scale, users needed to be organized into role-specific containers rather than being managed individually.
+![All Users Dashboard](Screenshot-All-Users.png)
+> **Proof of Execution:** Successfully provisioned a multi-departmental directory, mapping key attributes like Department and Job Title to ensure clean Identity and Access Management (IAM).
 
-* **Action:** Created Assigned Security Groups for major departments: `Production`, `Inventory`, `Packaging`, `HumanResources`, and `IT Help Desk`.
-* **Action:** Populated the functional security groups with the respective departmental users to establish a foundation for bulk policy assignment.
+![User Properties Profile](Screenshot-User-Profile.png)
+> **Proof of Execution:** A fully realized user profile demonstrating enterprise-level attention to detail, including reporting structures (Manager assigned) and corporate contact information.
 
-> **Visual Proof: Security Group Creation**
-> *[Insert Image 3 (All groups pane) here]*
+### 2. Resource Provisioning & Licensing
+Once the identities were created, the next step was granting them the tools necessary to perform their jobs. For this simulation, I navigated to the Microsoft 365 Admin Center to assign licenses to the Junior Helpdesk user.
 
-> **Visual Proof: Group Membership (Inventory Department)**
-> *[Insert Image 4 (Inventory group members: Elena & Marcus) here]*
+I applied two specific licenses:
+* **Microsoft 365 Business Basic:** To provide an Exchange mailbox for support tickets and Teams for communication.
+* **Entra ID Premium P1:** To unlock enterprise security features required for later phases, such as Conditional Access and dynamic grouping.
 
----
+![M365 License Assignment](Screenshot-License-Assignment.png)
+> **Proof of Execution:** Successfully navigated the M365 Admin Center to provision productivity applications and advanced security licenses to an end-user.
 
-## 🔐 Phase 3: Privilege Delegation (RBAC)
-**Scenario:** A new Junior Helpdesk technician (John Carter) joined the IT team. He required the ability to reset employee passwords and manage basic credential issues without holding Global Administrator privileges.
+### 3. Role-Based Access Control (RBAC)
+To maintain a secure environment, it is crucial to follow the **Principle of Least Privilege**. Rather than giving the Junior Helpdesk employee full Global Administrator rights, I assigned a specialized built-in role. 
 
-* **Action:** Created a dedicated cloud identity for the incoming Junior IT Support technician.
-* **Action:** Enforced the Principle of Least Privilege by utilizing the 'Assigned roles' directory to explicitly delegate only the **Helpdesk Administrator** role. 
+I granted the **Helpdesk Administrator** role. This securely delegates the ability to reset user passwords and troubleshoot sign-in issues without giving the account the power to alter global tenant security settings or delete accounts.
 
-> **Visual Proof: Role-Based Access Control Application**
-> *[Insert Image 2 (John Carter Assigned Roles) here]*
+![RBAC Role Assignment](Screenshot-Role-Assignment.png)
+> **Proof of Execution:** Demonstrated understanding of RBAC by securely delegating the Helpdesk Administrator role, ensuring the user has exactly the access needed for their job and nothing more.
 
 ---
-
-## 🎫 Phase 4: Help Desk Operations & Auditing
-*(This section covers daily administrative simulations, including access recovery, emergency offboarding, and directory auditing.)*
-
-> **Visual Proof: Entra ID Audit Logs**
-> *[Image coming soon]*
+*Author: Subash Chalise | IT Support Professional*

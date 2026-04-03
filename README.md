@@ -51,7 +51,7 @@ In enterprise environments, access is granted to groups, not individuals. I esta
 To alleviate basic ticket volume from the IT Help Desk, I applied the principle of delegation by assigning the Production Manager as the "Owner" of this group. This empowers the department head to manage their own team's membership without requiring Global Admin intervention.
 
 > **Proof of Execution:** Created a departmental security group and successfully delegated ownership to a non-IT manager.
-> > ![All Users Dashboard](images/2a.png)
+> ![All Users Dashboard](images/2a.png)
 
 ### 2. Dynamic Group Automation
 To demonstrate advanced identity automation, I utilized my Entra ID Premium P1 license to configure a Dynamic Security Group for the Human Resources department (`HR-Human-Resources-Team`). 
@@ -59,7 +59,34 @@ To demonstrate advanced identity automation, I utilized my Entra ID Premium P1 l
 Instead of relying on manual additions during onboarding, I built a membership query that automatically evaluates user metadata. If a user's `Department` attribute is set to "Human Resources," they are instantly added to the group. This eliminates human error and guarantees secure, instant access provisioning.
 
 > **Proof of Execution:** Successfully configured a dynamic membership query `(user.department -eq "Human Resources")` to automate group assignments based on user attributes.
-> > ![All Users Dashboard](images/2b.png)
+> ![All Users Dashboard](images/2b.png)
+
+---
+## Phase 3: Security & Conditional Access (MFA)
+
+**Objective:** To implement a modern Zero Trust security framework by enforcing Multi-Factor Authentication (MFA) through targeted Conditional Access policies, ensuring high-priority accounts are protected without causing tenant-wide disruption.
+
+### 1. Targeted MFA Enforcement (The "If/Then" Logic)
+Using the Entra ID Premium P1 features, I moved beyond standard "Per-User MFA" to a more scalable and automated **Conditional Access** approach. I created a custom policy named `SEC-Require-MFA-Production-HR`.
+
+* **Policy Logic:** * **IF** a user belongs to the `PRD-Production-Team` or `HR-Human-Resources-Team` security groups...
+    * **AND** they attempt to access **All Cloud Apps** (Outlook, Teams, Azure Portal, etc.)...
+    * **THEN** they are **Required to perform Multi-Factor Authentication (MFA)**.
+* **Strategic Phased Rollout:** I purposely excluded the Global Admin and other departments (Packaging, Inventory) from this initial policy. This demonstrates a "Phased Rollout" strategy, which is industry best practice to ensure security changes can be validated on a smaller scale before a company-wide enforcement.
+
+> **Proof of Execution:** Successfully configured a live Conditional Access policy with granular targeting, demonstrating an understanding of modern identity security boundaries.
+> > > ![All Users Dashboard](images/3a.png)
+
+### 2. Security Verification (The User Experience)
+A critical step in any security implementation is verification. To ensure the policy was functioning correctly, I performed a "Sign-in Test" using an Incognito browser session.
+
+I attempted to log in as **Sarah Jenkins** (HR Director). Because her account is part of the targeted `HR-Human-Resources-Team` group, Entra ID immediately intercepted the login attempt. The system successfully triggered the "Action Required" screen, forcing the user to register for MFA before granting access to corporate resources.
+
+> **Proof of Execution:** Verified the policy in a real-world login scenario. The "Action Required" prompt confirms the Zero Trust boundary is active and effectively protecting the targeted user accounts.
+> > > ![All Users Dashboard](images/3b.png)
+
+### 3. Safety & Disaster Recovery
+By targeting specific groups rather than selecting "All Users," I ensured that my **Global Administrator** account remained accessible. In a production environment, this strategy prevents "Admin Lockout" scenarios. For future scalability, I would implement **Emergency Access (Break-Glass) accounts** and add them to the "Exclude" tab of this policy to ensure the tenant remains manageable even if the MFA service experiences a global outage.
 
 ---
 *Author: Subash Chalise | IT Support Professional*

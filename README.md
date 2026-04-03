@@ -75,7 +75,7 @@ Using the Entra ID Premium P1 features, I moved beyond standard "Per-User MFA" t
 * **Strategic Phased Rollout:** I purposely excluded the Global Admin and other departments (Packaging, Inventory) from this initial policy. This demonstrates a "Phased Rollout" strategy, which is industry best practice to ensure security changes can be validated on a smaller scale before a company-wide enforcement.
 
 > **Proof of Execution:** Successfully configured a live Conditional Access policy with granular targeting, demonstrating an understanding of modern identity security boundaries.
-> > > ![All Users Dashboard](images/3a.png)
+>  ![All Users Dashboard](images/3a.png)
 
 ### 2. Security Verification (The User Experience)
 A critical step in any security implementation is verification. To ensure the policy was functioning correctly, I performed a "Sign-in Test" using an Incognito browser session.
@@ -83,7 +83,7 @@ A critical step in any security implementation is verification. To ensure the po
 I attempted to log in as **Sarah Jenkins** (HR Director). Because her account is part of the targeted `HR-Human-Resources-Team` group, Entra ID immediately intercepted the login attempt. The system successfully triggered the "Action Required" screen, forcing the user to register for MFA before granting access to corporate resources.
 
 > **Proof of Execution:** Verified the policy in a real-world login scenario. The "Action Required" prompt confirms the Zero Trust boundary is active and effectively protecting the targeted user accounts.
-> > > ![All Users Dashboard](images/3b.png)
+>  ![All Users Dashboard](images/3b.png)
 
 ### 3. Safety & Disaster Recovery
 By targeting specific groups rather than selecting "All Users," I ensured that my **Global Administrator** account remained accessible. In a production environment, this strategy prevents "Admin Lockout" scenarios. For future scalability, I would implement **Emergency Access (Break-Glass) accounts** and add them to the "Exclude" tab of this policy to ensure the tenant remains manageable even if the MFA service experiences a global outage.

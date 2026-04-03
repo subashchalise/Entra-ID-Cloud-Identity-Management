@@ -4,6 +4,24 @@
 This project simulates a real-world enterprise cloud IT environment, focusing on Identity and Access Management (IAM) within Microsoft Entra ID and the Microsoft 365 Admin Center. Building upon foundational Active Directory lifecycle concepts, this project demonstrates practical cloud administration and aligns with the core identity objectives of the MS-900 (Microsoft 365 Fundamentals) certification.
 
 ---
+## 📑 Table of Contents
+* [Phase 1: Identity Lifecycle & User Onboarding](#phase-1-identity-lifecycle--user-onboarding)
+    * [1. User Provisioning & Metadata Management](#1-user-provisioning--metadata-management)
+    * [2. Resource Provisioning & Licensing](#2-resource-provisioning--licensing)
+    * [3. Role-Based Access Control (RBAC)](#3-role-based-access-control-rbac)
+* [Phase 2: Group Management & Delegation](#phase-2-group-management--delegation)
+    * [1. Manual Security Groups & Delegation](#1-manual-security-groups--delegation)
+    * [2. Dynamic Group Automation](#2-dynamic-group-automation)
+* [Phase 3: Security & Conditional Access (MFA)](#phase-3-security--conditional-access-mfa)
+    * [1. Targeted MFA Enforcement](#1-targeted-mfa-enforcement-the-ifthen-logic)
+    * [2. Security Verification (The User Experience)](#2-security-verification-the-user-experience)
+    * [3. Safety & Disaster Recovery](#3-safety--disaster-recovery)
+* [Phase 4: Troubleshooting & Operations](#phase-4-troubleshooting--operations)
+    * [1. Administrative Password Reset](#1-administrative-password-reset)
+    * [2. Investigating Sign-in Logs (The "Detective" Work)](#2-investigating-sign-in-logs-the-detective-work)
+* [Conclusion](#conclusion)
+
+---
 ###  Technologies & Skills
 | Category | Tools & Concepts |
 | :--- | :--- |

@@ -109,7 +109,7 @@ In an enterprise environment, a common support ticket is: *"I'm getting blocked 
 
 
 > **Proof of Execution:** Used Entra ID monitoring tools to perform a successful security investigation, verifying that the identity protection policies are being applied correctly to the targeted users.
-> >  ![All Users Dashboard](images/4b.png)
+>  ![All Users Dashboard](images/4b.png)
 
 ---
 ## Conclusion

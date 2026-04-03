@@ -89,4 +89,23 @@ I attempted to log in as **Sarah Jenkins** (HR Director). Because her account is
 By targeting specific groups rather than selecting "All Users," I ensured that my **Global Administrator** account remained accessible. In a production environment, this strategy prevents "Admin Lockout" scenarios. For future scalability, I would implement **Emergency Access (Break-Glass) accounts** and add them to the "Exclude" tab of this policy to ensure the tenant remains manageable even if the MFA service experiences a global outage.
 
 ---
+
+## Phase 4: Troubleshooting & Operations
+
+**Objective:** To demonstrate the ability to support an identity environment through password management and security auditing.
+
+### 1. Administrative Password Reset
+I performed a simulated password reset for **Mike Ross** (Production). This demonstrates the standard help-desk workflow for account recovery, ensuring the user is prompted to create a private password upon their next login to maintain security.
+
+> **Proof of Execution:** Successfully managed user account recovery via the Entra ID administrative portal.
+>  ![All Users Dashboard](images/3b.png)
+
+### 2. Identity Lifecycle Verification
+To conclude the project, I verified that the test user successfully completed their security onboarding. The "Set up complete" confirmation proves that the user is now fully compliant with the organization's MFA requirements and has multiple recovery methods (Authenticator + App Password) configured.
+
+
+> **Proof of Execution:** Confirmed the successful transition of a user from "Unsecured" to "MFA Compliant," closing the loop on the identity lifecycle.
+>  ![All Users Dashboard](images/3b.png)
+
+---
 *Author: Subash Chalise | IT Support Professional*

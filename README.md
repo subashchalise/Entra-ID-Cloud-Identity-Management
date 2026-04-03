@@ -4,6 +4,16 @@
 This project simulates a real-world enterprise cloud IT environment, focusing on Identity and Access Management (IAM) within Microsoft Entra ID and the Microsoft 365 Admin Center. Building upon foundational Active Directory lifecycle concepts, this project demonstrates practical cloud administration and aligns with the core identity objectives of the MS-900 (Microsoft 365 Fundamentals) certification.
 
 ---
+### 🛠️ Technologies & Skills
+| Category | Tools & Concepts |
+| :--- | :--- |
+| **Cloud Platform** | Microsoft Entra ID (Azure AD), M365 Admin Center |
+| **Security** | Zero Trust, MFA, Conditional Access, Phased Rollout |
+| **Identity** | RBAC, Least Privilege, User Lifecycle, Metadata Management |
+| **Automation** | Dynamic Security Groups, Attribute-based Access Control (ABAC) |
+| **Operations** | Root Cause Analysis (RCA), Sign-in Logs, Password Management |
+
+---
 
 ## Phase 1: Identity Lifecycle & User Onboarding
 

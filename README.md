@@ -41,4 +41,25 @@ I granted the **Helpdesk Administrator** role. This securely delegates the abili
 > ![All Users Dashboard](images/1d.png)
 
 ---
+## Phase 2: Group Management & Delegation
+
+**Objective:** To organize identities for scalable management, demonstrating both manual administrative delegation and automated dynamic memberships to reduce Tier 1 support overhead.
+
+### 1. Manual Security Groups & Delegation
+In enterprise environments, access is granted to groups, not individuals. I established a standard Security Group for the Production department (`PRD-Production-Team`). 
+
+To alleviate basic ticket volume from the IT Help Desk, I applied the principle of delegation by assigning the Production Manager as the "Owner" of this group. This empowers the department head to manage their own team's membership without requiring Global Admin intervention.
+
+> **Proof of Execution:** Created a departmental security group and successfully delegated ownership to a non-IT manager.
+> > ![All Users Dashboard](images/2a.png)
+
+### 2. Dynamic Group Automation
+To demonstrate advanced identity automation, I utilized my Entra ID Premium P1 license to configure a Dynamic Security Group for the Human Resources department (`HR-Human-Resources-Team`). 
+
+Instead of relying on manual additions during onboarding, I built a membership query that automatically evaluates user metadata. If a user's `Department` attribute is set to "Human Resources," they are instantly added to the group. This eliminates human error and guarantees secure, instant access provisioning.
+
+> **Proof of Execution:** Successfully configured a dynamic membership query `(user.department -eq "Human Resources")` to automate group assignments based on user attributes.
+> > ![All Users Dashboard](images/2b.png)
+
+---
 *Author: Subash Chalise | IT Support Professional*

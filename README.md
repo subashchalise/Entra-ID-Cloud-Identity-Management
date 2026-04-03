@@ -100,12 +100,16 @@ I performed a simulated password reset for **Mike Ross** (Production). This demo
 > **Proof of Execution:** Successfully managed user account recovery via the Entra ID administrative portal.
 >  ![All Users Dashboard](images/4a.png)
 
-### 2. Identity Lifecycle Verification
-To conclude the project, I verified that the test user successfully completed their security onboarding. The "Set up complete" confirmation proves that the user is now fully compliant with the organization's MFA requirements and has multiple recovery methods (Authenticator + App Password) configured.
+### 2. Investigating Sign-in Logs (The "Detective" Work)
+In an enterprise environment, a common support ticket is: *"I'm getting blocked by MFA!"* To prove my ability to perform **Root Cause Analysis (RCA)**, I investigated the sign-in logs for **Sarah Jenkins** to verify the state of her authentication attempt.
+
+* **The Investigation:** I navigated to the **Monitoring > Sign-in logs** section and located the specific authentication attempt for the user.
+* **The Discovery:** The logs confirmed a **"Success"** status with the **"Authentication requirement"** clearly listed as **Multifactor authentication**. 
+* **The Conclusion:** By reviewing the **Conditional Access** tab within the logs, I confirmed that my specific security policy (`SEC-Require-MFA-Production-HR`) was the direct trigger for this challenge. This proves that the user is being correctly protected by the organization's Zero Trust security boundaries and that the system is operating exactly as designed.
 
 
-> **Proof of Execution:** Confirmed the successful transition of a user from "Unsecured" to "MFA Compliant," closing the loop on the identity lifecycle.
->  ![All Users Dashboard](images/4b.png)
+> **Proof of Execution:** Used Entra ID monitoring tools to perform a successful security investigation, verifying that the identity protection policies are being applied correctly to the targeted users.
+> >  ![All Users Dashboard](images/4b.png)
 
 ---
 *Author: Subash Chalise | IT Support Professional*

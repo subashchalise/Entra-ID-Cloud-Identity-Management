@@ -1,4 +1,4 @@
-# Entra ID Tier 1 Help Desk Administration
+# Entra ID Identity Security Management
 
 ## Project Overview
 This project simulates a real-world enterprise cloud IT environment, focusing on Identity and Access Management (IAM) within Microsoft Entra ID and the Microsoft 365 Admin Center. Building upon foundational Active Directory lifecycle concepts, this project demonstrates practical cloud administration and aligns with the core identity objectives of the MS-900 (Microsoft 365 Fundamentals) certification.
